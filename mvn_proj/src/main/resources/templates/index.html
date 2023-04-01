@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+	rel="stylesheet">
+<link th:href="@{/css/styles.css}" rel="stylesheet">
+<meta charset="utf-8">
+<title>Calculate</title>
+</head>
+<body>
+	<script>
+		function nfe() {
+			alert("Error: You tried to enter a string value. Try again");
+			return "index";
+		}
+	</script>
+	<div class="body">
+		<h1 class="h1">Резултат</h1>
+		<br> <br>
+		<form action="/calculate" method="post" class="form">
+			<label class="label" for="numbers">Въведи числа:</label>
+			<div class="info">
+				<div class="hide">Попълни полето с числа, като ги разделиш с
+					интервал.</div>
+				i
+			</div>
+			<br> <input type="text" name="numbers" id="numbers"
+				class="input"> <br> <br>
+			<button onclick="checkForLetters()" class="button">🔥
+				Изчисли 🔥</button>
+			<script>
+				function checkForLetters() {
+					var input = document.getElementById("numbers").value;
+					var arr = input.split(" ");
+
+					for (var i = 0; i < arr.length; i++) {
+						if (/[a-zA-Z]/.test(arr[i])) {
+							alert("Попълни полето с числа, като ги разделиш с интервал.");
+							return;
+						}
+					}
+				}
+			</script>
+		</form>
+	</div>
+</body>
+</html>

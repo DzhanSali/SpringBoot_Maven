@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+	rel="stylesheet">
+<link th:href="@{/css/styles.css}" rel="stylesheet">
+<meta charset="utf-8">
+<title>Result</title>
+</head>
+<body>
+	<div class="body">
+		<p class="p"
+			th:text="${average >= 5.5 ? 'Имаш да черпиш, майна!' : 'Стига се излага, пустиняк...'}"></p>
+		<div class="imgDiv">
+			<img class="img"
+				th:src="${average >= 5.5 ? '/images/di.gif' : '/images/n.jpg'}" />
+		</div>
+
+		<h1 class="h1">Резултат ⬇</h1>
+		<div class="sketchy">
+			<p>Средно аритметичното е:</p>
+			<p>
+				<strong th:text="${average}"></strong>
+			</p>
+		</div>
+		<div class="link">
+		<a href="/" class="a"> ← </a> 
+		</div>
+	</div>
+</body>
+</html>
